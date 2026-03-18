@@ -1,0 +1,16 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "language-learn-mcp"
+version = "1.0.0"
+description = "MCP server for language learning pedagogy — CEFR mixing, prompt generation, exercise building, drift detection"
+requires-python = ">=3.11"
+dependencies = ["mcp>=1.0.0"]
+
+[project.scripts]
+language-learn-mcp = "language_learn_mcp.server:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/language_learn_mcp"]
