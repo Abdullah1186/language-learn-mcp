@@ -23,7 +23,8 @@ from .tools.score_response import score_response
 from .tools.detect_drift import detect_drift
 from .tools.get_reinforcement_note import get_reinforcement_note
 
-mcp = FastMCP("language-learn-mcp")
+import os as _os
+mcp = FastMCP("language-learn-mcp", host="0.0.0.0", port=int(_os.environ.get("PORT", 8000)))
 
 
 @mcp.tool()
@@ -196,9 +197,7 @@ def tool_get_reinforcement_note(
 
 
 def main():
-    import os
-    port = int(os.environ.get("PORT", 8000))
-    mcp.run(transport="sse", host="0.0.0.0", port=port)
+    mcp.run(transport="sse")
 
 
 if __name__ == "__main__":
