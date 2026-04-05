@@ -196,7 +196,9 @@ def tool_get_reinforcement_note(
 
 
 def main():
-    mcp.run()
+    import os
+    port = int(os.environ.get("PORT", 8000))
+    mcp.run(transport="sse", host="0.0.0.0", port=port)
 
 
 if __name__ == "__main__":
