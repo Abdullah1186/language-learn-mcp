@@ -155,13 +155,7 @@ Contributions are welcome! Areas of interest:
 - Adaptive difficulty algorithms
 - Integration tests with AI models
 
-## License
 
-MIT License
-
-## Author
-
-Abdullah Hasan
 
 ## Related Projects
 
